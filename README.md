@@ -1,12 +1,17 @@
 # Contextual Augmentation
 
-This repository contains a collection of scripts for an experiment of Contextual Augmentation.
+This repository contains a collection of scripts for an experiment of [Contextual Augmentation](https://arxiv.org/pdf/1805.06201.pdf).
 
 Contextual augmentation is a domain-independent data augmentation for text classification tasks.
 Texts in supervised dataset are augmented by replacing words with other words
 which are predicted by a label-conditioned bi-directional language model.
 
 Disclaimer: PFN provides no warranty or support for this implementation. Use it at your own risk. See license for details.
+
+
+## References
+
+Sosuke Kobayashi. *Contextual Augmentation: Data Augmentation by Words with Paradigmatic Relations*. NAACL-HLT, 2018. [arxiv](https://arxiv.org/pdf/1805.06201.pdf)
 
 
 ### Prepare a label-conditional bi-directional language model
@@ -53,11 +58,6 @@ Using contextual augmentation
 ```
 python train_text_classifier.py -g 0 --dataset stsa.fine --resume-vocab vocabs/stsa.fine.vocab.json --out results_caug --model rnn -bilm trained_bilm/stsa.fine/best_model.npz -bilm-l 1 -bilm-u 1024
 ```
-
-## References
-
-Sosuke Kobayashi. Contextual Augmentation: Data Augmentation by Words with Paradigmatic Relations. NAACL-HLT, 2018.
-
 
 ## License
 

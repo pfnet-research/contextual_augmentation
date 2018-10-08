@@ -40,7 +40,7 @@ python -u train.py -g 0 --train datasets/wikitext-103-raw/spacy_wikitext-103-raw
 sh construct_vocab_classification.sh
 
 # modify the model file for a different vocabulary
-python alt_model_to_another_vocab.py --vocab datasets/wikitext-103-raw/spacy_wikitext-103-raw.train.vocab.t50 --new-vocab vocabs/stsa.fine.vocab.json -u 1024 --layer 1 --resume trained_bilm/best_model.npz
+python alt_model_to_another_vocab.py --vocab datasets/wikitext-103-raw/spacy_wikitext-103-raw.train.vocab.t50 --new-vocab vocabs/stsa.fine.vocab.json -u 1024 --layer 1 --resume trained_bilm/best_model.npz --suffix stsa.fine
 
 # finetune the model as a conditional version
 python -u train.py -g 0 --labeled-dataset stsa.fine --vocab vocabs/stsa.fine.vocab.json -u 1024 --layer 1 --dropout 0.5 --batchsize 64 --out trained_bilm/stsa.fine --resume trained_bilm/best_model.npz.stsa.fine --epoch 5

@@ -23,6 +23,7 @@ sh prepare_rawwikitext.sh
 # install chainer and spacy
 pip install cupy
 pip install chainer
+pip install progressbar2
 pip install spacy
 python -m spacy download en_core_web_sm
 

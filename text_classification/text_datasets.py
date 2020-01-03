@@ -10,10 +10,10 @@ import numpy
 
 import chainer
 
-from nlp_utils import make_vocab
-from nlp_utils import normalize_text
-from nlp_utils import split_text
-from nlp_utils import transform_to_array
+from .nlp_utils import make_vocab
+from .nlp_utils import normalize_text
+from .nlp_utils import split_text
+from .nlp_utils import transform_to_array
 
 URL_DBPEDIA = 'https://github.com/le-scientifique/torchDatasets/raw/master/dbpedia_csv.tar.gz'  # NOQA
 URL_IMDB = 'http://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz'

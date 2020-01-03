@@ -214,9 +214,9 @@ class BiLanguageModel(chainer.Chain):
         count = 0
         for i, x in enumerate(xs):
             new_out.append(eos)
-            new_out.append(out_concat[count:count + len(xs) - 2])
+            new_out.append(out_concat[count:count + len(x) - 2])
             new_out.append(eos)
-            count += len(xs) - 2
+            count += len(x) - 2
         out_concat = F.concat(new_out, axis=0)
 
         def embed_func(x): return F.embed_id(x, embedW, ignore_label=-1)
